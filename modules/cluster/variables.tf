@@ -1,7 +1,7 @@
 variable "region" {
   description = "The region to create the resources into"
   type        = string
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "cluster_name" {
@@ -248,7 +248,7 @@ variable "allowed_spot_instance_types" {
 variable "enable_worker_groups_launch_template" {
   description = "Flag to enable Worker Group Launch Templates"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "lt_desired_nodes_per_subnet" {
@@ -278,19 +278,19 @@ variable "jx_git_operator_values" {
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
   type        = string
-  default     = ""
+  default     = "https://github.com/adithya180498/jx3-eks-asm.git"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
-  default     = ""
+  default     = "jenkinsx"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
-  default     = ""
+  default     = "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"
 }
 
 variable "create_eks" {
@@ -377,7 +377,7 @@ variable "create_ssm_role" {
 variable "create_asm_role" {
   description = "Flag to control AWS Secrets Manager iam roles creation"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "create_pipeline_vis_role" {
@@ -433,7 +433,7 @@ variable "boot_secrets" {
 variable "use_asm" {
   description = "Flag to specify if AWS Secrets manager is being used"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "boot_iam_role" {
