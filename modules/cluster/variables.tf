@@ -6,11 +6,13 @@ variable "region" {
 
 variable "cluster_name" {
   type = string
+  default = "jenkinsx"
 }
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
+  default     = 1.21
 }
 
 variable "profile" {
@@ -22,12 +24,12 @@ variable "profile" {
 # Worker Nodes
 variable "desired_node_count" {
   type    = number
-  default = 3
+  default = 2
 }
 
 variable "min_node_count" {
   type    = number
-  default = 3
+  default = 2
 }
 
 variable "max_node_count" {
@@ -43,7 +45,7 @@ variable "node_machine_type" {
 # VPC
 variable "vpc_name" {
   type    = string
-  default = "tf-vpc-eks"
+  default = "tf-vpc-eks-jx1"
 }
 
 variable "public_subnets" {
@@ -278,19 +280,19 @@ variable "jx_git_operator_values" {
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
   type        = string
-  default     = "https://github.com/adithya180498/jx3-eks-asm.git"
+  default     = ""
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
-  default     = "jenkinsx"
+  default     = "jenkinsx-jx1"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
-  default     = "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"
+  default     = ""
 }
 
 variable "create_eks" {
